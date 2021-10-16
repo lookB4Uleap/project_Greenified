@@ -1,0 +1,42 @@
+#home-container {
+    padding: 10px;
+    width: 52.5rem;
+    min-height: calc(100vh - 110px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.TextFieldBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
+    background-color: var(--green);
+    border-radius: 10px;
+}
+
+.FieldName {
+    padding: 10px;
+    color: var(--light);
+}
+
+.ActionBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 10px);
+    height: 40px;
+    background-color: var(--light);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 1024px) {
+    #home-container {
+        width: 90vw;
+    }
+}

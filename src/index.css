@@ -1,13 +1,116 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap');
+
+:root {
+  --dark: #242f3f;
+  --light: whitesmoke;
+  --green: #5CB25C;
+  --background: aqua;
+  font-size: 16px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+html, body, #root {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.Main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 10%;
+  font-family: 'Viaoda Libre', cursive;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--green); 
+  cursor: pointer;
+}
+
+.Logo img {
+  height: 40px;
+  width: 40px;
+}
+
+.Header-Container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 28px;
+  font-family: 'Viaoda Libre', cursive;
+  font-weight: 600;
+  padding-bottom: 10px;
+  width: 100%;
+  color: var(--green);
+  border-bottom: 1px solid var(--green);
+  margin-bottom: 10px;
+}
+
+.Footer {
+  display: flex;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  flex-shrink: 0;
+  font-weight: 700;
+  color: var(--green);
+  background-color: var(--light);
+}
+
+.Content {
+  display: flex;
+  /* min-height: 100%; */
+  flex-direction: column;
+  flex: 1 0 auto;
+  justify-content: center;
+  align-items: center; 
+  /* 
+  flex-grow 1
+  flex-shrink 0
+  flex-basis auto  
+  */
+}
+
+.StopScrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--green);
 }
