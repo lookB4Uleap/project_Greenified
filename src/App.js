@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import Login from './components/Login';
 import NavBar from './components/NavBar';
+import { News } from './components/News';
 import UserPosts from './components/UserPosts';
 import { auth } from './Firebase';
 // import logo from './logo.svg';
@@ -22,6 +23,9 @@ function App() {
             <Switch>
                 <Route exact path='/'>
                     <Home user={user} />
+                </Route>
+                <Route exact path='/news'>
+                    <News />
                 </Route>
                 <Route exact path='/yourPosts'>
                     <UserPosts />

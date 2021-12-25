@@ -50,10 +50,10 @@ const UserPosts = () => {
     }
 
     return (
-        <article id='home-container'>
+        <div id='home-container'>
             <Head name='My Posts' />
             <TextField display={display} user={user} />
-            <Text display={display} />   
+            {/* <Text display={display} />    */}
             {
                 loading ? <p>Loading...</p> :
                 
@@ -69,7 +69,7 @@ const UserPosts = () => {
                     )
                 
             }
-        </article>
+        </div>
     )
 }
 

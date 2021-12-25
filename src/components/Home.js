@@ -71,7 +71,7 @@ const Home = ({ user }) => {
     }, [])
 
     return (
-        <article id='home-container'>
+        <main id='home-container'>
             <Head name='Home' />
             {
                 posts.map(
@@ -85,7 +85,7 @@ const Home = ({ user }) => {
                     /> : null 
                 )
             }
-        </article>
+        </main>
     )
 }
 

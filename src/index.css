@@ -20,6 +20,7 @@ html, body, #root {
   height: 100%;
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
 }
 
 body {
@@ -39,12 +40,19 @@ body {
   align-items: center;
 }
 
+.Navbar {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--green);
+}
+
 .Logo {
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  left: 10%;
+  /* left: 10%; */
   font-family: 'Viaoda Libre', cursive;
   font-size: 30px;
   font-weight: 700;

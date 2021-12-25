@@ -13,10 +13,11 @@
     align-items: center;
     justify-content: center;
     padding: 10px;
-    width: 100%;
+    width: auto;
     background-color: var(--green);
     border-radius: 10px;
 }
+
 
 .FieldName {
     padding: 10px;
@@ -34,9 +35,55 @@
     cursor: pointer;
 }
 
+.ModalContainer {
+    width: 100%;
+}
+
+.Modal {
+    border-radius: 5px;
+    width: auto;
+}
+
+.PostInput {
+    width: 100%;
+    height: 300px;
+    min-height: 50px;
+    max-height: 50vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 5px;
+    resize: vertical;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    font-size: 14px;
+}
+
+.ModalEnd {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} 
 
 @media screen and (max-width: 1024px) {
     #home-container {
         width: 90vw;
+    }
+
+    .Modal {
+        width: 10vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .ModalEnd {
+        height: 50px;
+        width: 95vw;
+        max-width: 100%;
+    }
+
+    .PostInput {
+        width: 95vw;
+        max-width: 100%;
     }
 }
