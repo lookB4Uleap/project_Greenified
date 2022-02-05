@@ -106,6 +106,17 @@ body {
   */
 }
 
+.Posts {
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.Posts:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
 .StopScrolling {
   height: 100%;
   overflow: hidden;

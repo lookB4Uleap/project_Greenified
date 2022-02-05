@@ -1,17 +1,24 @@
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { BrowserRouter as Router, Switch, Route  } from 'react-router-dom';
-import Footer from './components/Footer';
-import Home from './components/Home';
-import Login from './components/Login';
-import NavBar from './components/NavBar';
-import { News } from './components/News';
-import UserPosts from './components/UserPosts';
-import { auth } from './Firebase';
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { BrowserRouter as Router, Switch, Route  } from 'react-router-dom'
+import Footer from './components/Footer'
+import Home from './components/Home'
+import Login from './components/Login'
+import NavBar from './components/NavBar'
+import Profile from './components/Profile'
+import  PostDetails from './components/PostDetails'
+import { News } from './components/News'
+import UserPosts from './components/UserPosts'
+import { auth } from './Firebase'
+import React, { useEffect, useState } from 'react'
 // import logo from './logo.svg';
 
 function App() {
 
   const [user, loading] = useAuthState(auth)
+
+  // useEffect(() => {
+  //   console.log(user)
+  // })
 
   return (
     <div className='Content'>
@@ -29,6 +36,12 @@ function App() {
                 </Route>
                 <Route exact path='/yourPosts'>
                     <UserPosts />
+                </Route>
+                <Route exact path='/profile'>
+                    <Profile />
+                </Route>
+                <Route exact path='/postDetails'>
+                    <PostDetails />
                 </Route>
                 <Route exact path='/login'>
                     <Login user={user} />

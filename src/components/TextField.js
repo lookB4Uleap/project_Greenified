@@ -164,7 +164,7 @@ export default function TextField() {
             userId: user?.uid,
             userName: user?.displayName,
             post: post,
-            links: linkUrls,
+            // links: linkUrls,
             photoUrl: user?.photoURL    
         }
         console.log('Create Post')

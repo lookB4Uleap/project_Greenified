@@ -11,7 +11,7 @@
 .Post-Header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     background-color: var(--light);
     height: 30px;
     width: 100%;

@@ -34,6 +34,12 @@ const UserPosts = () => {
         getUserPosts(user)
     })
 
+    useEffect(() => {
+        return () => {
+            setPosts([])
+        }
+    }, [])
+
     const display = () => {
         setDispTextField(!dispTextField);
         if (dispTextField) {
