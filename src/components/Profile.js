@@ -24,7 +24,7 @@ const Profile = () => {
                     console.log(err)
                 })
         else {
-            alert('Post Id not found')
+            alert('Profile Id not found')
             history.replace("/")
         }
     }, [])
