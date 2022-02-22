@@ -232,6 +232,15 @@ const NavBar = () => {
                 <MenuItem  onClick={
                     () => {
                         handleCloseNavMenu()
+                        if (history.location.pathname !== `/profile?id=${user.uid}`)
+                        history.push(`/profile?id=${user.uid}`)
+                    }
+                } >
+                  <Typography textAlign="center">Profile</Typography>
+                </MenuItem>
+                <MenuItem  onClick={
+                    () => {
+                        handleCloseNavMenu()
                         if (history.location.pathname !== "/yourPosts")
                         history.push("/yourPosts")
                     }
