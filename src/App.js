@@ -9,7 +9,7 @@ import  PostDetails from './components/PostDetails'
 import { News } from './components/News'
 import UserPosts from './components/UserPosts'
 import { auth } from './Firebase'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 // import logo from './logo.svg';
 
 function App() {

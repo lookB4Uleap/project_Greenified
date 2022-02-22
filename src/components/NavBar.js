@@ -2,7 +2,7 @@
 // import { NavLink } from 'react-router-dom'
 // // import Home from './Home'
 // import '../component-styles/NavBar.css'
-import Logo from '../Logo'
+// import Logo from '../Logo'
 // import { auth } from '../Firebase'
 // // import { useAuthState } from 'react-firebase-hooks/auth'
 // import UserOptions from './UserOptions'

@@ -2,7 +2,7 @@
 
 :root {
   --dark: #242f3f;
-  --light: whitesmoke;
+  --light: #e7ebf1;
   --green: #5CB25C;
   --background: aqua;
   font-size: 16px;
@@ -26,7 +26,7 @@ html, body, #root {
 body {
   display: flex;
   flex-direction: column;
-  background-color: var(--background);
+  background-color: var(--light);
   /* justify-content: center;
   align-items: center; */
 }
@@ -56,7 +56,7 @@ body {
   font-family: 'Viaoda Libre', cursive;
   font-size: 30px;
   font-weight: 700;
-  color: var(--green); 
+  color: var(--green);
   cursor: pointer;
 }
 
@@ -64,6 +64,45 @@ body {
   height: 40px;
   width: 40px;
 }
+
+.Login-Container {
+  min-height: calc(100vh - 90px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.Login-Content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 50rem;
+  min-height: 50rem;
+  background-color: var(--green);
+  border-radius: 10px;
+}
+
+.Login-Header {
+  display: flex;
+  width: 20%;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 20px;
+  font-family: 'Viaoda Libre', cursive;
+}
+
+.Login-Options {
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 
 .Header-Container {
   display: flex;
@@ -79,17 +118,85 @@ body {
   margin-bottom: 10px;
 }
 
+#home-container {
+  padding: 10px;
+  width: 52.5rem;
+  min-height: calc(100vh - 110px);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.TextFieldBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  width: auto;
+  background-color: var(--green);
+  border-radius: 10px;
+}
+
+
+.FieldName {
+  padding: 10px;
+  color: var(--light);
+}
+
+.ActionBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 10px);
+  height: 40px;
+  background-color: var(--light);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.ModalContainer {
+  width: 100%;
+}
+
+.Modal {
+  border-radius: 5px;
+  width: auto;
+}
+
+.PostInput {
+  width: 100%;
+  height: 300px;
+  min-height: 50px;
+  max-height: 50vh;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 5px;
+  resize: vertical;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  font-size: 14px;
+}
+
+.ModalEnd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
 .Footer {
   display: flex;
   bottom: 0;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 40px;
+  height: 39px;
   flex-shrink: 0;
   font-weight: 700;
   color: var(--green);
   background-color: var(--light);
+  border-top: 1px solid var(--green);
 }
 
 .Content {
@@ -98,7 +205,7 @@ body {
   flex-direction: column;
   flex: 1 0 auto;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   /* 
   flex-grow 1
   flex-shrink 0
@@ -108,19 +215,66 @@ body {
 
 .Posts {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   margin-top: 10px;
+  border-radius: 10px !important;
 }
 
-.Posts:hover {
+/* .Posts:hover {
   cursor: pointer;
   opacity: 0.8;
-}
+} */
 
 .StopScrolling {
   height: 100%;
   overflow: hidden;
 }
+
+.Profile-Container {
+  width: 100%;
+  background-color: 'white';
+}
+
+.Profile-Details {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+}
+
+.Profile-Details img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.Profile-Details div {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+  padding-left: 20px;
+}
+
+.Comment-Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+.Clickable:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 
 ::-webkit-scrollbar {
   width: 5px;
@@ -132,4 +286,53 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: var(--green);
+}
+
+@media screen and (max-width: 580px) {
+  .Profile-Container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .Profile-Details {
+    flex-direction: column;
+    padding: 5px;
+    padding-bottom: 10px;
+  }
+
+  .Profile-Details div {
+    align-items: center;
+    padding: 0;
+  }
+
+  .Login-Content {
+    flex-direction: column;
+    min-width: calc(100vw - 15px);
+    min-height: 50vh;
+  }
+
+  #home-container {
+    width: 90vw;
+  }
+
+  .Modal {
+    width: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .ModalEnd {
+    height: 50px;
+    width: 95vw;
+    max-width: 100%;
+  }
+
+  .PostInput {
+    width: 95vw;
+    max-width: 100%;
+  }
 }

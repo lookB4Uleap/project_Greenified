@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import '../component-styles/Home.css'
+// import '../component-styles/Home.css'
 import Posts from './Posts'
 import TextField from './TextField'
 // import { useAuthState } from 'react-firebase-hooks/auth';
@@ -8,6 +8,7 @@ import axios from 'axios';
 import Head from './Head';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../Firebase';
+import { URL } from '../URL';
 // import { user } from './Values';
 
 const UserPosts = () => {
@@ -19,8 +20,8 @@ const UserPosts = () => {
 
     const getUserPosts = async (user) => {
         // let user = JSON.parse(sessionStorage.getItem('user'))
-        const url = 'http://localhost:4001/post'
-        await axios.get(url + '/' + user.uid)
+        // const url = 'http://localhost:4001/post'
+        await axios.get(URL + 'post/' + user.uid)
             .then(
                 res => setPosts(res.data)
             )

@@ -132,11 +132,12 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { TextareaAutosize } from '@mui/material';
+// import { TextareaAutosize } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../Firebase';
 import axios from 'axios';
+import { URL } from '../URL';
 
 const style = {
   position: 'absolute',
@@ -154,7 +155,7 @@ export default function TextField() {
     const [user, loading] = useAuthState(auth)
 
     const createPost = async() => {
-        const url = 'http://localhost:4001/post'
+        // const url = 'http://localhost:4001/post'
         let linkUrls = []
         // for (let i=0; i<linkId; ++i) {
         //     // linkNames.push(links[i][1])
@@ -168,11 +169,11 @@ export default function TextField() {
             photoUrl: user?.photoURL    
         }
         console.log('Create Post')
-        await axios.post(url, new_post)
+        await axios.post(URL + 'post/', new_post)
             .then(
                 res => {
                     // console.log(res.data)
-                    updatePosts()
+                    // updatePosts()
                 }
             )
             .catch(
@@ -181,9 +182,9 @@ export default function TextField() {
     }
 
     const updatePosts = async () => {
-        const url = 'http://localhost:4000/user'
+        // const url = 'http://localhost:4000/user'
         const update_no_posts = { post: 1 }
-        await axios.patch(url + '/' + user?.uid, update_no_posts)
+        await axios.patch(URL + 'user/' + user?.uid, update_no_posts)
             .then(
                 // res => console.log(res.data)
             )

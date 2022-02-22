@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import '../component-styles/Home.css'
+// import '../component-styles/Home.css'
 // import Posts from './Posts'
 // import TextField from './TextField'
 // import { useAuthState } from 'react-firebase-hooks/auth';
@@ -8,15 +8,19 @@ import axios from 'axios';
 import Posts from './Posts';
 // import { loggedIn, LoggedIn, setUser } from './Values';
 import Head from './Head';
+import TextField from './TextField';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../Firebase';
+import { URL } from '../URL';
 
-const Home = ({ user }) => {
-
+const Home = () => {
+    const [user, loading] = useAuthState(auth)
     const [posts, setPosts] = useState([])
 
     const getUserIfExists = async () => {
-        const url = 'http://localhost:4001/user'
+        // const url = 'http://localhost:4001/user'
         let user_details
-        await axios.get(url + '/' + user.uid).then(
+        await axios.get(URL + 'user/' + user.uid).then(
             res => {
                 // flag = res.data.flag
                 // // console.log(flag)
@@ -33,7 +37,7 @@ const Home = ({ user }) => {
                     userEmail: user.email,
                     photoUrl: user.photoURL
                 }
-                axios.post(url, user_details)
+                axios.post(URL + 'user/', user_details)
                     .then(
                         res => console.log(res.data)
                     )
@@ -61,8 +65,8 @@ const Home = ({ user }) => {
     }
 
     const getPosts = async () => {
-        const url = 'http://localhost:4001/post'
-        await axios.get(url)
+        // const url = 'http://localhost:4001/post'
+        await axios.get(URL + 'post/')
             .then(
                 res => {
                     setPosts(res.data)
@@ -84,20 +88,29 @@ const Home = ({ user }) => {
         getPosts()
         if (user != null)
             getUserIfExists()
+        // console.log(user)
     }, [user])
+
+    useEffect(() => {
+        getPosts()
+    })
+
 
     return (
         <main id='home-container'>
             <Head name='Home' />
+            {user ? <TextField user={user} /> : <></>}
             {
                 posts.map(
                     (post) => post ? <Posts key={post._id}
+                        id={post._id}
+                        userId={post.userId}
                         head={post.userName}
                         body={post.post}
                         photoUrl={post.photoUrl}
-                        linkUrls={post.links}
-                        linkNames={post.linkNames}
                         dateOfCreation={new Date(post.dateOfCreation)}
+                        likes={post.likes}
+                        likedBy={post.likedBy}
                     /> : null
                 )
             }
