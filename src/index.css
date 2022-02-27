@@ -44,7 +44,7 @@ body {
   height: 50px;
   display: flex;
   justify-content: center;
-  background-color: var(--green);
+  background-color: var(--green) !important;
 }
 
 .Logo {
@@ -218,6 +218,10 @@ body {
   margin-bottom: 20px;
   margin-top: 10px;
   border-radius: 10px !important;
+}
+
+.Card:hover {
+  cursor: pointer;
 }
 
 /* .Posts:hover {

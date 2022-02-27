@@ -95,6 +95,7 @@ const Home = () => {
         getPosts()
     })
 
+    // console.log(posts)
 
     return (
         <main id='home-container'>

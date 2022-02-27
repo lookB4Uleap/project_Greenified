@@ -52,21 +52,21 @@ const Login = ({ user }) => {
                         Twitter
                     </div> */}
                     <Button variant="contained"
-                        style={{margin: 5, width: 200, height: 40, borderRadius: 20}}
+                        style={{margin: 5, width: 200, height: 40, borderRadius: 20, backgroundColor: 'green'}}
                         startIcon={<GoogleIcon />}
                         onClick={loginWithGoogle}
                     >
                         Google
                     </Button>
                     <Button variant="contained"
-                        style={{margin: 5, width: 200, height: 40, borderRadius: 20}}
+                        style={{margin: 5, width: 200, height: 40, borderRadius: 20, backgroundColor: 'green'}}
                         startIcon={<FacebookIcon />}
                         disabled
                     >
                         Facebook
                     </Button>
                     <Button variant="contained"
-                        style={{margin: 5, width: 200, height: 40, borderRadius: 20}}
+                        style={{margin: 5, width: 200, height: 40, borderRadius: 20, backgroundColor: 'green'}}
                         startIcon={<TwitterIcon />}
                         disabled
                     >
