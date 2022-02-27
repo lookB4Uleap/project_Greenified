@@ -26,7 +26,7 @@ const Home = () => {
                 // // console.log(flag)
                 // if (flag === 1)
                 //     console.log(res.data)
-                console.log(res.data)
+                // console.log(res.data)
             }
         ).catch(
             err => {

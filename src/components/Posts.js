@@ -72,6 +72,7 @@ import { auth } from '../Firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import axios from 'axios';
 import { URL } from '../URL';
+import { Tooltip } from '@mui/material';
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -179,30 +180,38 @@ export default function Posts({ id, head, body, dateOfCreation, photoUrl, commen
             <CardActions style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                 {
                     like ?
-                        <IconButton aria-label="add to favorites"
-                            style={{ paddingLeft: 20, paddingRight: 20 }}
-                            onClick={() => toggleLike(-1)}
-                        >
-                            <FavoriteIcon /> {likes}
-                        </IconButton> :
-                        <IconButton aria-label="add to favorites"
-                            style={{ paddingLeft: 20, paddingRight: 20 }}
-                            onClick={() => toggleLike(1)}
-                        >
-                            <FavoriteBorderIcon /> {likes}
-                        </IconButton>
+                        <Tooltip title='Like'>
+                            <IconButton aria-label="add to favorites"
+                                style={{ paddingLeft: 20, paddingRight: 20 }}
+                                onClick={() => toggleLike(-1)}
+                            >
+                                <FavoriteIcon /> {likes}
+                            </IconButton>
+                        </Tooltip> :
+                        <Tooltip title='Like'>
+                            <IconButton aria-label="add to favorites"
+                                style={{ paddingLeft: 20, paddingRight: 20 }}
+                                onClick={() => toggleLike(1)}
+                            >
+                                <FavoriteBorderIcon /> {likes}
+                            </IconButton>
+                        </Tooltip>
                 }
                 {!comments ?
-                    <IconButton
-                        aria-label="comments" style={{ paddingLeft: 20, paddingRight: 20 }}
-                        onClick={() => history.push(`/postDetails?id=${id}`)}
-                    >
-                        <CommentIcon />
-                    </IconButton> : <></>
+                    <Tooltip title='Comments'>
+                        <IconButton
+                            aria-label="comments" style={{ paddingLeft: 20, paddingRight: 20 }}
+                            onClick={() => history.push(`/postDetails?id=${id}`)}
+                        >
+                            <CommentIcon />
+                        </IconButton>
+                    </Tooltip> : <></>
                 }
-                <IconButton aria-label="share" style={{ paddingLeft: 20, paddingRight: 20 }}>
-                    <ShareIcon />
-                </IconButton>
+                <Tooltip title='Share'>
+                    <IconButton aria-label="share" style={{ paddingLeft: 20, paddingRight: 20 }}>
+                        <ShareIcon />
+                    </IconButton>
+                </Tooltip>
             </CardActions>
 
         </Card>

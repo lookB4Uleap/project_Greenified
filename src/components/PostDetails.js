@@ -21,7 +21,7 @@ const PostDetails = () => {
     useEffect(() => {
         const query = url.parse(location.search, true).query
         // console.log(location)
-        console.log(query)
+        // console.log(query)
 
         if (query.id)
             axios.get(URL + 'post/specificPost/' + query.id)
@@ -53,6 +53,8 @@ const PostDetails = () => {
                 photoUrl={post.photoUrl}
                 dateOfCreation={new Date(post.dateOfCreation)}
                 comments={post.comments}
+                likes={post.likes}
+                likedBy={post.likedBy}
             />
             <Head name='Comments' />
             <AddComment user={user} setPost={setPost} postId={url.parse(location.search, true).query.id} />
@@ -121,7 +123,7 @@ const AddComment = ({ user, setPost, postId }) => {
                     }}
                 />
                 <IconButton onClick={() => pushComment()} >
-                    <SendIcon/>
+                    <SendIcon />
                 </IconButton>
             </div>
 
