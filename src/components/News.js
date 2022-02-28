@@ -24,12 +24,17 @@ export const News = () => {
     return (
         <main id="home-container">
             <Head name='News' />
-            {/* {
+            {
                 news?.articles?.map(
-                    (article) => <NewsCard id={article.link} />
+                    (article) => <NewsCard
+                        id={article.link}
+                        title={article.title}
+                        pub_date={article.published_date}
+                        link={article.link}
+                        source={article.source.title} />
                 )
-            } */}
-            <NewsCard />
+            }
+            {/* <NewsCard /> */}
         </main>
     )
 }
