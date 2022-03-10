@@ -65,14 +65,16 @@ const UserPosts = () => {
                 loading ? <p>Loading...</p> :
                 
                     posts.map(
-                        (post) => <Posts key={post._id} 
-                                    head={post.userName} 
-                                    body={post.post}  
-                                    linkUrls={post.links}
-                                    linkNames={post.linkNames}
-                                    dateOfCreation={new Date(post.dateOfCreation)}
-                                    photoUrl={post.photoUrl}
-                                    />
+                        (post) => <Posts key={post._id}
+                        id={post._id}
+                        userId={post.userId}
+                        head={post.userName}
+                        body={post.post}
+                        photoUrl={post.photoUrl}
+                        dateOfCreation={new Date(post.dateOfCreation)}
+                        likes={post.likes}
+                        likedBy={post.likedBy}
+                    />
                     )
                 
             }
