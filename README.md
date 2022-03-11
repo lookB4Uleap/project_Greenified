@@ -12,18 +12,16 @@ Frontend (React) deployed on Firebase.
 Backend (Node.JS and Express) deployed on Heroku.
 
 # Screenshots
-![view posts without login](./images/image1.png)
+![view posts](./images/image1.png)
 
-![](./images/image2.png)
+![profile](./images/image2.png)
 
-![](./images/image3.png)
+![my posts](./images/image3.png)
 
-![](./images/image3.png)
+![news](./images/image4.png)
 
-![](./images/image4.png)
+![post details](./images/image5.png)
 
-![](./images/image5.png)
+![view posts without login](./images/image6.png)
 
-![](./images/image6.png)
-
-![](./images/image7.png)
+![login page](./images/image7.png)
