@@ -55,7 +55,6 @@ const Login = ({ user }) => {
                         style={{ margin: 5, width: 200, height: 40, borderRadius: 20, backgroundColor: 'green' }}
                         startIcon={<GoogleIcon />}
                         onClick={loginWithGoogle}
-                        disabled
                     >
                         Google
                     </Button>
