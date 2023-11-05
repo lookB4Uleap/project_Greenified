@@ -23,7 +23,7 @@ const Login = ({ user }) => {
                 loggedIn(true)
             }
         ).catch((err) =>
-            console.log(err));
+            console.log(err))
     }
 
     useEffect(() => {

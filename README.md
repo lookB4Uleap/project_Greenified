@@ -25,3 +25,12 @@ Backend (Node.JS and Express) deployed on Heroku.
 ![view posts without login](./images/image6.png)
 
 ![login page](./images/image7.png)
+
+# Deployment
+```npm install -G firebase-tools```
+
+```firebase login```
+
+```firebase init```
+
+```firebase deploy```

@@ -9,11 +9,11 @@ var options = {
     url: process.env.NEWS_URL,
     params: {
         q: 'environmental pollution',
-        country: 'US',
+        // country: 'US',
         lang: 'en',
-        source: 'cnn.com',
-        limit: '50',
-        when: '30d'
+        // source: 'cnn.com',
+        // limit: '50',
+        // when: '30d'
     },
     headers: {
         'x-rapidapi-host': process.env.NEWS_API_HOST,
@@ -23,7 +23,7 @@ var options = {
 
 router.get('/', async (req, res) => {
     axios.request(options).then(function (response) {
-        // console.log(response.data)
+        console.log(response.data)
         res.json(response.data)
     }).catch(function (error) {
         // console.error(error)
