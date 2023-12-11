@@ -9,7 +9,7 @@ Tech used: React, Node.JS, Express, MongoDB
 To be implemented : A system to score users and their posts based on relevance and quality of content.
 
 Frontend (React) deployed on Firebase.
-Backend (Node.JS and Express) deployed on Heroku.
+Backend (Node.JS and Express) deployed on Vercel.
 
 # Screenshots
 ![view posts](./images/image1.png)
